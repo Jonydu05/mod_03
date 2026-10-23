@@ -16,13 +16,9 @@ if __name__ == "__main__":
     valid_inputs = get_valid_inputs(sys.argv[1:])
     if not valid_inputs:
         print("No scores provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
-
-    msg: str = ""
-    print("Scores processed: [")
-    for i in valid_inputs:
-        print(f"{i}, ")
-    print("]")
-
+        exit(1)
+    msg = ", ".join(str(i) for i in valid_inputs)
+    print(f"Scores processed: [{msg}]")
     total_players = len(valid_inputs)
     total_score = sum(valid_inputs)
     high_score = max(valid_inputs)
