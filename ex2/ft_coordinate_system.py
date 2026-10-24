@@ -25,15 +25,19 @@ def get_player_pos() -> tuple[float, float, float]:
 if __name__ == "__main__":
     print("=== Game Coordinate System ===")
     print("\nGet first set of coordinates")
-    try:
-        first_coord = get_player_pos()
-    except Exception as e:
-        print(e)
+    while True:
+        try:
+            first_coord = get_player_pos()
+            break
+        except Exception as e:
+            print(e)
     print("\nGet second set of coordinates")
-    try:
-        second_coord = get_player_pos()
-    except Exception as e:
-        print(e)
+    while True:
+        try:
+            second_coord = get_player_pos()
+            break
+        except Exception as e:
+            print(e)
     distance_coords = sqrt(
         (second_coord[0] - first_coord[0]) ** 2
         + (second_coord[1] - first_coord[1]) ** 2
