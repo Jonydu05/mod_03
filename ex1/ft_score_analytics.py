@@ -1,11 +1,12 @@
 import sys
 
+
 def get_valid_inputs(args: list[str]) -> list[int]:
     valid_inputs: list[int] = []
     for arg in args:
         try:
             valid_inputs.append(int(arg))
-        except:
+        except Exception:
             print(f"Invalid parameter: '{arg}'")
     return valid_inputs
 
@@ -15,7 +16,8 @@ if __name__ == "__main__":
     print("=== Player Score Analytics ===")
     valid_inputs = get_valid_inputs(sys.argv[1:])
     if not valid_inputs:
-        print("No scores provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
+        print("No scores provided. "
+              "Usage: python3 ft_score_analytics.py <score1> <score2> ...")
         exit(1)
     msg = ", ".join(str(i) for i in valid_inputs)
     print(f"Scores processed: [{msg}]")
