@@ -1,4 +1,4 @@
-from random import randint, sample
+import random
 
 ACHIEVEMENTS: list[str] = [
     "Crafting Genius", "Strategist", "World Savior", "Speed Runner",
@@ -9,8 +9,8 @@ ACHIEVEMENTS: list[str] = [
 
 
 def gen_player_achievements() -> set[str]:
-    count = randint(4, 9)
-    picked = sample(ACHIEVEMENTS, count)
+    count = random.randint(4, 9)
+    picked = random.sample(ACHIEVEMENTS, count)
     return set(picked)
 
 

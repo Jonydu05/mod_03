@@ -1,4 +1,4 @@
-from sys import argv
+import sys
 
 
 def get_valid_inputs(args: list[str]) -> list[int]:
@@ -14,7 +14,7 @@ def get_valid_inputs(args: list[str]) -> list[int]:
 if __name__ == "__main__":
     valid_inputs: list[int] = []
     print("=== Player Score Analytics ===")
-    valid_inputs = get_valid_inputs(argv[1:])
+    valid_inputs = get_valid_inputs(sys.argv[1:])
     if not valid_inputs:
         print("No scores provided. "
               "Usage: python3 ft_score_analytics.py <score1> <score2> ...")

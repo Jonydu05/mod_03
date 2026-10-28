@@ -1,5 +1,5 @@
-from random import choice
-from typing import Generator
+import typing
+import random
 
 
 PLAYERS: list[str] = ["charlie", "dylan", "alice", "bob"]
@@ -7,15 +7,15 @@ ACTIONS: list[str] = ["move", "grab", "use", "swim", "run",
                       "climb", "release", "eat", "sleep"]
 
 
-def gen_event() -> Generator[tuple[str, str], None, None]:
+def gen_event() -> typing.Generator[tuple[str, str], None, None]:
     while True:
-        player = choice(PLAYERS)
-        action = choice(ACTIONS)
+        player = random.choice(PLAYERS)
+        action = random.choice(ACTIONS)
         yield (player, action)
 
 
 def consume_event(arr: list[tuple[str, str]]) -> None:
-    event_picked = choice(arr)
+    event_picked = random.choice(arr)
     print(f"Got event from list: {event_picked}")
     arr.remove(event_picked)
 

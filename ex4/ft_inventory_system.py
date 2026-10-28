@@ -1,11 +1,11 @@
-from sys import argv
+import sys
 
 
 if __name__ == "__main__":
     print("=== Inventory System Analysis ===")
     inventory: dict[str, int] = {}
 
-    for i in argv[1:]:
+    for i in sys.argv[1:]:
         parts = i.split(":", 1)
         if len(parts) != 2:
             print(f"Error - invalid parameter '{parts}'")

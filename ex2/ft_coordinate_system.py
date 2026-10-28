@@ -1,4 +1,4 @@
-from math import sqrt
+import math
 
 
 def get_player_pos() -> tuple[float, float, float]:
@@ -13,7 +13,7 @@ def get_player_pos() -> tuple[float, float, float]:
     except ValueError:
         raise Exception("Invalid Syntax")
     coord = (x, y, z)
-    center_at = sqrt(
+    center_at = math.sqrt(
         coord[0] ** 2 + coord[1] ** 2 + coord[2] ** 2
     )
     print(f"Got first tuple: {coord}")
@@ -38,7 +38,7 @@ if __name__ == "__main__":
             break
         except Exception as e:
             print(e)
-    distance_coords = sqrt(
+    distance_coords = math.sqrt(
         (second_coord[0] - first_coord[0]) ** 2
         + (second_coord[1] - first_coord[1]) ** 2
         + (second_coord[2] - first_coord[2]) ** 2
