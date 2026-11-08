@@ -8,11 +8,11 @@ if __name__ == "__main__":
     for i in sys.argv[1:]:
         parts = i.split(":", 1)
         if len(parts) != 2:
-            print(f"Error - invalid parameter '{parts}'")
+            print(f"Error - invalid parameter '{parts[0]}'")
             continue
         name, qtd_str = parts
         if name in inventory:
-            print(f"Redundant item {name} - discarding")
+            print(f"Redundant item '{name}' - discarding")
             continue
         try:
             qtd = int(qtd_str)
