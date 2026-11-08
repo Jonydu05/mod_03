@@ -43,4 +43,5 @@ if __name__ == "__main__":
         + (second_coord[1] - first_coord[1]) ** 2
         + (second_coord[2] - first_coord[2]) ** 2
     )
+    distance_coords = round(distance_coords, 4)
     print(f"Distance between the 2 sets of coordinates: {distance_coords}")
